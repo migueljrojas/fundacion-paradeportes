@@ -1,0 +1,14 @@
+mixin empresas(spec)
+    section.empresas
+        .container-fluid
+            .row.nopadding
+                .col-xs-24.col-sm-6.col-md-4
+                    .empresas__heading
+                        h3.empresas__heading__title Empresas que suman
+                .col-xs-24.col-sm-18.col-md-20
+                    .empresas__list__wrapper
+                        ul.empresas__list
+                            each item in site.data.empresas
+                                li.empresas__item
+                                    a.empresas__item__logo(href=item.url)
+                                        img(src=item.logo, alt=item.name)

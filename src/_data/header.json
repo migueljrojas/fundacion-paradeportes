@@ -1,6 +1,26 @@
 [
     {
-        "name":"",
-        "url":""
+        "name":"Nosotros",
+        "url":"/nosotros"
+    },
+    {
+        "name":"Misión",
+        "url":"/mision"
+    },
+    {
+        "name":"Novedades",
+        "url":"/nodevades"
+    },
+    {
+        "name":"Programas",
+        "url":"/programas"
+    },
+    {
+        "name":"Galería",
+        "url":"/galeria"
+    },
+    {
+        "name":"Escribinos",
+        "url":"#contacto"
     }
 ]

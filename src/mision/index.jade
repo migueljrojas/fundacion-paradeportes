@@ -1,0 +1,48 @@
+extends ../_layouts/base
+
+include ../_modules/paradeportes-banner/paradeportes-banner
+include ../_modules/empresas/empresas
+include ../_modules/contacto/contacto
+include ../_modules/cta/cta
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.mision
+        section.mision__hero
+            .container
+                .row
+                    .col-xs-24.col-sm-12
+                        h1.mision__hero__title Misión
+                    .col-xs-24.col-sm-12
+                        +cta
+        section.mision__body
+            .container
+                .row
+                    .col-xs-24.col-sm-20.col-sm-offset-2.col-md-16.col-md-offset-4
+                        each item in site.data.mision.content1
+                            if item.title
+                                h3.mision__title= item.title
+                            each p in item.content
+                                p.mision__text= p
+                    .col-xs-24
+                        .mision__stats
+                            each item in site.data.mision.stats
+                                .mision__stats__item
+                                    span.mision__stats__item__data= item.data
+                                    h4.mision__stats__item__title= item.title
+                                    p.mision__stats__item__desc= item.desc
+                    .col-xs-24.col-sm-20.col-sm-offset-2.col-md-16.col-md-offset-4
+                        each item in site.data.mision.content2
+                            if item.title
+                                h3.mision__title= item.title
+                            each p in item.content
+                                p.mision__text= p
+                    .col-xs-24
+                        .embed-responsive.embed-responsive-16by9
+                            iframe.embed-responsive-item(src=site.data.mision.video)
+        +paradeportes-banner
+        +empresas
+        +contacto

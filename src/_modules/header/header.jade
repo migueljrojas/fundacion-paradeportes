@@ -1,2 +1,39 @@
-header.header
+header.header.-ontop
+    .container.header__container
+        .header__logo
+            a(href="/")
+                img(src="/images/logo-white.png")
+        
+        ul.header__social
+            each red in site.data.social
+                li
+                    a(href=red.url, target="_blank")
+                        i(class="fa fa-#{red.name}")
+                            
+        .header__hamburguer
+            span
+            span
+            span
+                
+        nav.header__nav
+            ul.header__menu
+                each item in site.data.header
+                    li
+                        a(href=item.url)= item.name
+                        if item.submenu
+                            ul.header__submenu
+                                each link in item.submenu
+                                    li
+                                        a(href=link.url)= link.name
+                li
+                    a.header__menu__cta(href="#") Tu aporte suma
+                    
+            ul.header__nav__social
+                li
+                    p Seguínos en:
+                each red in site.data.social
+                    li
+                        a(href=red.url, target="_blank")
+                            i(class="fa fa-#{red.name}")
+                
     

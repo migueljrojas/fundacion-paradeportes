@@ -1,0 +1,41 @@
+extends ../_layouts/base
+
+include ../_modules/paradeportes-banner/paradeportes-banner
+include ../_modules/empresas/empresas
+include ../_modules/contacto/contacto
+include ../_modules/pagination/pagination
+include ../_modules/cta/cta
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.programas
+        section.programas__hero
+            .container
+                .row
+                    .col-xs-24.col-sm-12
+                        h1.programas__hero__title La Fundación
+                    .col-xs-24.col-sm-12
+                        +cta
+        section.programas__body
+            .container
+                .row
+                    .col-xs-24
+                        ul.programas__list
+                            each item in site.data.programas.list
+                                li.programas__item
+                                    .programas__item__img
+                                        img(src=item.img)
+                                    .programas__item__data
+                                        h2.programas__item__title
+                                        p.programas__item__desc
+                                        .programas__item__actions
+                                            a.programas__item__actions__info(href="#") Más Información
+                                            a.programas__item__actions__cta(href="#") Participá
+                        +pagination
+                                
+        +paradeportes-banner
+        +empresas
+        +contacto

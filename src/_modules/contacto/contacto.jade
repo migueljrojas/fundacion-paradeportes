@@ -1,0 +1,28 @@
+include ../slider/slider
+
+mixin contacto(spec)
+    section.contacto#contacto
+        .container-fluid
+            .row.nopadding
+                .col-xs-24.col-sm-8
+                    form.contacto__form
+                        h2.contacto__title Escribinos
+                        p.contacto__text Loren ipsum dolor sit amet, consectetur adipiscing elit.
+                        .contacto__form__group
+                            input.contacto__form__input(type="text", placeholder="Nombre")
+                            label.contacto__form__label Nombre
+                        .contacto__form__group
+                            input.contacto__form__input(type="email", placeholder="Email")
+                            label.contacto__form__label Email
+                        .contacto__form__group
+                            textarea.contacto__form__input.contacto__form__input--textarea(placeholder="Mensaje")
+                            label.contacto__form__label Mensaje
+                        .contacto__form__group
+                            button.contacto__form__submit(type="submit") Enviar mensaje
+                        
+                .col-xs-24.col-sm-16
+                    +slider('contacto__slider')
+                        each item in site.data.contacto.slider
+                            .contacto__slide
+                                .contacto__slide__img
+                                    img(src=item)

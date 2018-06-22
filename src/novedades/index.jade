@@ -1,0 +1,56 @@
+extends ../_layouts/base
+
+include ../_modules/paradeportes-banner/paradeportes-banner
+include ../_modules/empresas/empresas
+include ../_modules/contacto/contacto
+include ../_modules/pagination/pagination
+include ../_modules/cta/cta
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    section.novedades__hero
+        .container
+            .row
+                .col-xs-24.col-sm-12
+                    h1.novedades__hero__title Novedades
+                .col-xs-24.col-sm-12
+                    +cta
+    section.novedades__heading
+        .container
+            .row
+                .col-xs-24
+                    article.novedades__heading__article
+                        .novedades__heading__article__img
+                            img(src=site.data.news.main.img)
+                        .novedades__heading__article__data
+                            span.novedades__heading__article__date 05/05/2018
+                            h3.novedades__heading__article__title= site.data.news.main.title
+                            p.novedades__heading__article__text= site.data.news.main.text
+                            a.novedades__heading__article__readmore(href=site.data.news.main.url) Seguir leyendo...
+    section.novedades__main
+        .container
+            .row
+                each item in site.data.news.top
+                    .col-xs-24.col-sm-8
+                        .novedades__main__article__img
+                            img(src=item.img)
+                        .novedades__main__article__data
+                            span.novedades__main__article__date 05/05/2018
+                            h3.novedades__main__article__title= item.title
+                            p.novedades__main__article__text= item.text
+                            a.novedades__main__article__readmore(href=item.url) Seguir leyendo...    
+    section.novedades__body
+        ul.novedades__body__list
+            each item in site.data.news.list
+                li.novedades__body__article__data
+                    h3.novedades__body__article__title= item.title
+                    p.novedades__body__article__text= item.text
+                    a.novedades__body__article__readmore(href=item.url) Seguir leyendo...
+        +pagination
+    +paradeportes-banner
+    +empresas
+    +contacto
+                    

@@ -1,3 +1,32 @@
 {
-    
+    "hero":{
+        "title":"Loren ipsum dolor sit amet",
+        "slider":[
+            "/images/home/slide1.jpg",
+            "/images/home/slide2.jpg"
+        ]
+    },
+    "fundacion":{
+        "title":"",
+        "tabs":[
+            {
+                "name":"",
+                "text":[
+                    ""
+                ],
+                "link":""
+            }
+        ]
+    },
+    "news":{
+        "title":"",
+        "articles":[
+            {
+
+            }
+        ]
+    },
+    "videos":[
+
+    ]
 }

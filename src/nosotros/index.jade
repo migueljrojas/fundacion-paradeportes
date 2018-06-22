@@ -1,0 +1,65 @@
+extends ../_layouts/base
+
+include ../_modules/paradeportes-banner/paradeportes-banner
+include ../_modules/empresas/empresas
+include ../_modules/contacto/contacto
+include ../_modules/cta/cta
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.fundacion
+        section.fundacion__hero
+            .container
+                .row
+                    .col-xs-24.col-sm-12
+                        h1.fundacion__hero__title La Fundación
+                    .col-xs-24.col-sm-12
+                        +cta
+        section.fundacion__body
+            .container
+                .row
+                    .col-xs-24.col-sm-20.col-sm-offset-2.col-md-16.col-md-offset-4
+                        each item in site.data.fundacion.content1
+                            if item.title
+                                h3.fundacion__title= item.title
+                            if item.subtitle
+                                h3.fundacion__subtitle= item.title
+                            each p in item.content
+                                p.fundacion__text= p
+                    .col-xs-24.col-sm-20.col-md-16
+                        .fundacion__quote
+                            p.fundacion__quote__text= site.data.fundacion.quote
+                    .col-xs-24.col-sm-20.col-sm-offset-2.col-md-16.col-md-offset-4
+                        each item in site.data.fundacion.content2
+                            if item.title
+                                h3.fundacion__title= item.title
+                            if item.subtitle
+                                h3.fundacion__subtitle= item.title
+                            each p in item.content
+                                p.fundacion__text= p
+        section.fundacion__interstitial
+        section.fundacion__body
+            .container
+                .row
+                    .col-xs-24.col-sm-20.col-sm-offset-2.col-md-16.col-md-offset-4
+                        each item in site.data.fundacion.content3
+                            if item.title
+                                h3.fundacion__title= item.title
+                            if item.subtitle
+                                h3.fundacion__subtitle= item.title
+                            each p in item.content
+                                p.fundacion__text= p
+                        each item in site.data.fundacion.content4
+                            if item.title
+                                h3.fundacion__title= item.title
+                            if item.subtitle
+                                h3.fundacion__subtitle= item.title
+                            each p in item.content
+                                p.fundacion__text= p
+                                
+        +paradeportes-banner
+        +empresas
+        +contacto
