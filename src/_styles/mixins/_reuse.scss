@@ -108,3 +108,35 @@
         }
     }
 }
+
+@mixin btn($height:40px, $color:$mainColor, $text:$white) {
+    @include trans;
+    height: $height;
+    line-height: $height;
+    display: inline-block;
+    padding: 0 20px;
+    background: $color;
+    color: $text;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: none;
+    font-weight: 600;
+    font-family: $altFont;
+
+    &:hover {
+        background: $color - #333;
+        color: $text + #222;
+        padding: 0 30px;
+    }
+}
+
+@mixin btnGhost($height:40px, $color:$mainColor, $text:$white) {
+    @include btn($height, $color, $text);
+    background: transparent;
+    border: 1px solid $text;
+
+    &:hover {
+        background: rgba(0,0,0,.3);
+        color: $text + #222;
+    }
+}

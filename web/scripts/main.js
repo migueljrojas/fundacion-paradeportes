@@ -14662,6 +14662,72 @@ return jQuery;
 'use strict';
 
 // Constructor
+var Empresas = function() {
+    var empresas = $('.empresas');
+
+    if (empresas) {
+        var list = $('.empresas__list');
+        var attachment = false, lastPosition, position, difference;
+        var scroll = 0;
+        var listItemLength = list.children('li').length;
+        var listItemWidth = list.children('li').outerWidth();
+        var listScrollWidth = listItemLength * listItemWidth;
+        var listScrollLimit = (listItemLength - 1) * 220;
+
+        var autoRotate = setInterval(function(){
+            if( scroll < listScrollLimit ) {
+                console.log('adentro');
+                console.log('scroll', scroll);
+                console.log('listScrollLimit', listScrollLimit);
+                scroll = scroll > listScrollLimit - 220 ? listScrollLimit : scroll+220;
+                list.animate({
+                    scrollLeft:  scroll
+                });
+            } else {
+                console.log('limit');
+                scroll = 0;
+                list.animate({
+                    scrollLeft:  scroll
+                });
+            }
+        }, 1000);
+
+        list.on("mousedown mouseup mousemove",function(e){
+            if( e.type == "mousedown" ){
+                attachment = true, lastPosition = [e.clientX, e.clientY];
+            }
+            if( e.type == "mouseup" ) {
+                attachment = false;
+            }
+            if( e.type == "mousemove" && attachment == true ){
+                position = [e.clientX, e.clientY];
+                difference = [ (position[0]-lastPosition[0]), (position[1]-lastPosition[1]) ];
+                $(this).scrollLeft( $(this).scrollLeft() - difference[0] );
+                $(this).scrollTop( $(this).scrollTop() - difference[1] );
+                lastPosition = [e.clientX, e.clientY];
+            }
+        });
+
+        list.on("mouseenter", function(){
+            attachment = false;
+            clearInterval(autoRotate);
+        });
+
+        list.on("mouseleave", function(){
+            attachment = false;
+            //autoRotate();
+        });
+
+        //autoRotate();
+    }
+};
+
+module.exports = Empresas;
+
+},{}],6:[function(require,module,exports){
+'use strict';
+
+// Constructor
 var Header = function() {
     var header = $('.header');
     var body = $('body');
@@ -14699,7 +14765,7 @@ var Header = function() {
     $(window).scroll(function() {
        var scroll = $(window).scrollTop();
 
-       if (scroll >= 250) {
+       if (scroll >= 400) {
            header.removeClass('-ontop');
        } else {
            header.addClass('-ontop');
@@ -14735,7 +14801,7 @@ var Header = function() {
 
 module.exports = Header;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 // Constructor
@@ -14786,7 +14852,42 @@ var Slider = function() {
 
 module.exports = Slider;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
+'use strict';
+
+var Home = function() {
+    var context = $('.home');
+
+    if (context) {
+        var tabs = $('.home__fundacion__tabs__content');
+        var tabSelector = $('.home__fundacion__tabs__selector li');
+
+        function tabInit() {
+            tabs.first().addClass('-active');
+            tabSelector.first().addClass('-active');
+        }
+
+        tabSelector.on('click', function(){
+            var $this = $(this);
+            var target = $this.data('target');
+
+            tabSelector.removeClass('-active');
+            tabs.removeClass('-active');
+            $this.addClass('-active');
+
+            tabs.filter(function(){
+                return $(this).data('tab') === target;
+            }).addClass('-active');
+
+        });
+
+        tabInit();
+    }
+}
+
+module.exports = Home;
+
+},{}],9:[function(require,module,exports){
 (function (global){
 // Main javascript entry point
 // Should handle bootstrapping/starting application
@@ -14797,6 +14898,8 @@ global.$ = global.jQuery = require('jquery');
 global._ = require('underscore');
 var Header = require('../_modules/header/header');
 var Slider = require('../_modules/slider/slider');
+var Empresas = require('../_modules/empresas/empresas');
+var Home = require('./home');
 
 $(function() {
     require('../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min');
@@ -14804,10 +14907,12 @@ $(function() {
 
     new Header();
     new Slider();
+    new Empresas();
+    new Home();
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min":1,"../../bower_components/slick-carousel/slick/slick":2,"../_modules/header/header":5,"../_modules/slider/slider":6,"jquery":3,"underscore":4}]},{},[7])
+},{"../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min":1,"../../bower_components/slick-carousel/slick/slick":2,"../_modules/empresas/empresas":5,"../_modules/header/header":6,"../_modules/slider/slider":7,"./home":8,"jquery":3,"underscore":4}]},{},[9])
 
 //# sourceMappingURL=main.js.map

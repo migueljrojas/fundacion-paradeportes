@@ -20,58 +20,67 @@ block content
                 .container
                     .row
                         .col-xs-24.col-sm-12
-                            h1.home__hero__title= site.data.home.hero.title
-                            .home__hero__logo
+                            h1.home__hero__title.wow.fadeInLeft!= site.data.home.hero.title
+                            .home__hero__logo.wow.fadeInLeft
                                 img.img-responsive(src="/images/logo-white.png", alt="Fundación Paradeportes")
                             
                         .col-xs-24.col-sm-12
                             +cta
-        section.home__fundation
+        section.home__fundacion
             .container
                 .row
                     .col-xs-24
                         h2.section-title= site.data.home.fundacion.title
                     .col-xs-24.col-sm-16
-                        .home__fundation__tabs
-                            ul.home__fundation__tabs__selector
+                        .home__fundacion__tabs.wow.fadeInUp
+                            ul.home__fundacion__tabs__selector
                                 each item, index in site.data.home.fundacion.tabs
                                     li(data-target="tab-#{index}")
                                         span= item.name
-                            each item, index in site.data.home.fundacion.tabs
-                                .home__fundation__tabs__content(data-tab="tab-#{index}")
-                                    h3.home__fundation__tabs__title=item.name
-                                    each p in item.text
-                                        p.home__fundation__tabs__text= p
-                                    a.home__fundation__tabs__link(href=item.link) Descubre más
+                            .home__fundacion__tabs__wrapper
+                                each item, index in site.data.home.fundacion.tabs
+                                    .home__fundacion__tabs__content(data-tab="tab-#{index}")
+                                        h3.home__fundacion__tabs__title=item.name
+                                        each p in item.text
+                                            p.home__fundacion__tabs__text= p
+                                        a.home__fundacion__tabs__link(href=item.link) Descubre más
                         
                     .col-xs-24.col-sm-8
-                        .home__fundation__logo
-                            img.img-responsive(src="/images/logo.png")
+                        .home__fundacion__logo
+                            img.img-responsive.wow.fadeInUp(src="/images/logo.png")
                             
         section.home__news
             .container
                 .row
                     .col-xs-24
                         h2.section-title= site.data.home.news.title
+                .row.nopadding
                     .col-xs-24
-                        +slider('home__news__slider', multi)
+                        +slider('home__news__slider', 'multi')
                             each article in site.data.home.news.articles
                                 .home__news__slide
                                     article.home__news__article
                                         .home__news__article__img
-                                            img(src=article.img)
-                                        h3.home__news__article__title= article.title
-                                        p.home__news__article__text= article.text
+                                            a(href=article.url)
+                                                img(src=article.img)
+                                        a(href=article.url)
+                                            h3.home__news__article__title= article.title
+                                        a(href=article.url)
+                                            p.home__news__article__text= article.text
                                         a.home__news__article__readmore(href=article.url) Seguir leyendo...
                                         
         +paradeportes-banner
         
         section.home__videos
-            +slider('home__videos__slider', multi)
-                each video in site.data.home.videos
-                    .home__videos__slide
-                        .embed-responsive.embed-responsive-16by9.home__videos__item
-                            iframe.embed-responsive-item(src=video)
+            .container
+                .row
+                    .col-xs-24
+                        +slider('home__videos__slider', 'multi')
+                            each video in site.data.home.videos
+                                .home__videos__slide
+                                    .home__videos__item
+                                        .embed-responsive.embed-responsive-16by9
+                                            iframe.embed-responsive-item(src=video)
         
         +empresas
                         

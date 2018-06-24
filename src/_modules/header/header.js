@@ -38,7 +38,7 @@ var Header = function() {
     $(window).scroll(function() {
        var scroll = $(window).scrollTop();
 
-       if (scroll >= 250) {
+       if (scroll >= 400) {
            header.removeClass('-ontop');
        } else {
            header.addClass('-ontop');

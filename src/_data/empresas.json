@@ -1,5 +1,42 @@
 [
     {
-        
+        "url":"#",
+        "name":"Allianz",
+        "logo":"/images/empresas/allianz.jpg"
+    },
+    {
+        "url":"#",
+        "name":"Apuba",
+        "logo":"/images/empresas/apuba.jpg"
+    },
+    {
+        "url":"#",
+        "name":"Cañuelas",
+        "logo":"/images/empresas/cañuelas.jpg"
+    },
+    {
+        "url":"#",
+        "name":"Citroen",
+        "logo":"/images/empresas/citroen.jpg"
+    },
+    {
+        "url":"#",
+        "name":"cpa",
+        "logo":"/images/empresas/cpa.jpg"
+    },
+    {
+        "url":"#",
+        "name":"gatorade",
+        "logo":"/images/empresas/gatorade.jpg"
+    },
+    {
+        "url":"#",
+        "name":"Mc Donalds",
+        "logo":"/images/empresas/mcDonalds.jpg"
+    }
+    ,{
+        "url":"#",
+        "name":"ottobock",
+        "logo":"/images/empresas/ottobock.jpg"
     }
 ]

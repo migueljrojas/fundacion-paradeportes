@@ -1,32 +1,87 @@
 {
     "hero":{
-        "title":"Loren ipsum dolor sit amet",
+        "title":"\"Se el cambio que quieres ver en el mundo\"<span>Gandhi</span>",
         "slider":[
             "/images/home/slide1.jpg",
             "/images/home/slide2.jpg"
         ]
     },
     "fundacion":{
-        "title":"",
+        "title":"La fundacion",
         "tabs":[
             {
-                "name":"",
+                "name":"Nosotros",
                 "text":[
-                    ""
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
                 ],
-                "link":""
+                "link":"#"
+            },
+            {
+                "name":"Misión",
+                "text":[
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
+                ],
+                "link":"#"
+            },
+            {
+                "name":"Programas",
+                "text":[
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes.",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet."
+                ],
+                "link":"#"
             }
         ]
     },
     "news":{
-        "title":"",
+        "title":"Novedades",
         "articles":[
             {
-
+                "img":"http://img2.noticias24.com/1208/oscarpistorius630at.jpg",
+                "title":"Fútbol para ciegos:  se define la Liga Nacional 2017",
+                "text":"Luego de la postergación del fin del año pasado, finalmente este fin de semana se jugará el octogonal final de la Liga Nacional de fútbol para ciegos. Este sábado 7 y domingo 8 de abril se llevará a cabo la competencia en el Estadio Nacional Los Murciélagos.",
+                "url":"/nota"
+            },
+            {
+                "img":"http://img2.noticias24.com/1208/oscarpistorius630at.jpg",
+                "title":"Fútbol para ciegos:  se define la Liga Nacional 2017",
+                "text":"Luego de la postergación del fin del año pasado, finalmente este fin de semana se jugará el octogonal final de la Liga Nacional de fútbol para ciegos. Este sábado 7 y domingo 8 de abril se llevará a cabo la competencia en el Estadio Nacional Los Murciélagos.",
+                "url":"/nota"
+            },
+            {
+                "img":"http://img2.noticias24.com/1208/oscarpistorius630at.jpg",
+                "title":"Fútbol para ciegos:  se define la Liga Nacional 2017",
+                "text":"Luego de la postergación del fin del año pasado, finalmente este fin de semana se jugará el octogonal final de la Liga Nacional de fútbol para ciegos. Este sábado 7 y domingo 8 de abril se llevará a cabo la competencia en el Estadio Nacional Los Murciélagos.",
+                "url":"/nota"
+            },
+            {
+                "img":"https://k44.kn3.net/BF2FB2683.jpg",
+                "title":"Fútbol para ciegos:  se define la Liga Nacional 2017",
+                "text":"Luego de la postergación del fin del año pasado, finalmente este fin de semana se jugará el octogonal final de la Liga Nacional de fútbol para ciegos. Este sábado 7 y domingo 8 de abril se llevará a cabo la competencia en el Estadio Nacional Los Murciélagos.",
+                "url":"/nota"
+            },
+            {
+                "img":"https://k44.kn3.net/BF2FB2683.jpg",
+                "title":"Fútbol para ciegos:  se define la Liga Nacional 2017",
+                "text":"Luego de la postergación del fin del año pasado, finalmente este fin de semana se jugará el octogonal final de la Liga Nacional de fútbol para ciegos. Este sábado 7 y domingo 8 de abril se llevará a cabo la competencia en el Estadio Nacional Los Murciélagos.",
+                "url":"/nota"
+            },
+            {
+                "img":"https://k44.kn3.net/BF2FB2683.jpg",
+                "title":"Fútbol para ciegos:  se define la Liga Nacional 2017",
+                "text":"Luego de la postergación del fin del año pasado, finalmente este fin de semana se jugará el octogonal final de la Liga Nacional de fútbol para ciegos. Este sábado 7 y domingo 8 de abril se llevará a cabo la competencia en el Estadio Nacional Los Murciélagos.",
+                "url":"/nota"
             }
         ]
     },
     "videos":[
-
+        "https://www.youtube.com/embed/IocLkk3aYlk",
+        "https://www.youtube.com/embed/qynsSP-bXNg",
+        "https://www.youtube.com/embed/mcdUsMULNzo",
+        "https://www.youtube.com/embed/5_QurE4V0dU",
+        "https://www.youtube.com/embed/JzFX3WfP9jA",
+        "https://www.youtube.com/embed/mcdUsMULNzo"
     ]
 }
